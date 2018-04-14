@@ -1,9 +1,10 @@
 /**
  * Created by John on 4/14/18.
  */
-public class DepthFirstSearch {
+public class DepthFirstPaths {
 
     private boolean[] marked;
+    private int[] edgeTo;
     private int count;
 
     /**
@@ -11,8 +12,9 @@ public class DepthFirstSearch {
      * @param G The Graph object
      * @param s The source vertex
      */
-    public DepthFirstSearch(Graph G, int s) {
+    public DepthFirstPaths(Graph G, int s) {
         marked = new boolean[G.getNumVertices()];
+        edgeTo = new int[G.getNumVertices()];
         validateVertex(s);
         dfs(G,s);
     }
@@ -24,6 +26,7 @@ public class DepthFirstSearch {
         for (int w : G.adj(v)) {
             if (!marked[w]) {
                 dfs(G, w);
+                edgeTo[w] = v;
             }
         }
     }
