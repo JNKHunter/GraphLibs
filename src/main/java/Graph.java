@@ -23,4 +23,8 @@ public class Graph {
         return adj[v];
     }
 
+    public int getNumVertices() {
+        return V;
+    }
+
 }
