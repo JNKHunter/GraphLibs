@@ -18,24 +18,22 @@ public class GraphTest {
     }
 
     @Test
-    public void addEdge() throws Exception {
+    public void adj() throws Exception {
         graph.addEdge(0,1);
         graph.addEdge(0,2);
+        graph.addEdge(0,3);
         Iterator adj = graph.adj(0).iterator();
 
         Integer n = 0;
         while(adj.hasNext()) {
             n += (Integer)adj.next();
         }
-        assertTrue(n == 3);
-    }
-
-    @Test
-    public void adj() throws Exception {
+        assertTrue(n == 6);
     }
 
     @Test
     public void getNumVertices() throws Exception {
+        assertTrue(graph.getNumVertices() == 5);
     }
 
 }
