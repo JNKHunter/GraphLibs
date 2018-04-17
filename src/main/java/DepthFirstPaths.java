@@ -8,7 +8,7 @@ public class DepthFirstPaths {
     private int count;
 
     /**
-     * 
+     *
      * @param G The Graph object
      * @param s The source vertex
      */
@@ -40,6 +40,11 @@ public class DepthFirstPaths {
     public boolean isMarked(int v) {
         validateVertex(v);
         return marked[v];
+    }
+
+    public int getEdgeTo(int child) {
+        validateVertex(child);
+        return edgeTo[child];
     }
 }
 
